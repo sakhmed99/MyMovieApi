@@ -4,22 +4,25 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class GenresEntity {
+public class KeywordsEntity {
+	
 	
 	private int id;
 	private String name;
 	
 	
-	public GenresEntity() {
+	public KeywordsEntity() {
 		
 	}
 
 
-	public GenresEntity(int id, String name) {
+	public KeywordsEntity(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
+
+
 
 
 	public int getId() {
@@ -44,9 +47,9 @@ public class GenresEntity {
 
 	@Override
 	public String toString() {
-		return "GenresEntity [id=" + id + ", name=" + name + "]";
+		return "KeywordsEntity [id=" + id + ", name=" + name + "]";
 	}
-
-
 	
-}	
+	
+
+}
