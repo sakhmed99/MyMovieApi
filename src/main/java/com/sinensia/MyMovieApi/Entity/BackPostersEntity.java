@@ -10,21 +10,13 @@ public class BackPostersEntity {
 	
 	private List<ImagesEntity> backdrops;
 	
-	private List<ImagesEntity> logo;
+	private int id;
 	
 	private List<ImagesEntity> posters;
 	
 	
 	public BackPostersEntity() {
 		
-	}
-
-
-	public BackPostersEntity(List<ImagesEntity> backdrops, List<ImagesEntity> logo, List<ImagesEntity> posters) {
-		super();
-		this.backdrops = backdrops;
-		this.logo = logo;
-		this.posters = posters;
 	}
 
 
@@ -38,13 +30,13 @@ public class BackPostersEntity {
 	}
 
 
-	public List<ImagesEntity> getLogo() {
-		return logo;
+	public int getId() {
+		return id;
 	}
 
 
-	public void setLogo(List<ImagesEntity> logo) {
-		this.logo = logo;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 
@@ -60,9 +52,12 @@ public class BackPostersEntity {
 
 	@Override
 	public String toString() {
-		return "BackPostersEntity [backdrops=" + backdrops + ", logo=" + logo + ", posters=" + posters + "]";
+		return "BackPostersEntity [backdrops=" + backdrops + ", id=" + id + ", posters=" + posters + "]";
 	}
+
+
 	
-	
+
+
 
 }

@@ -87,10 +87,13 @@ public class MovieService {
 
         ImagesEntity[] responseBackdrops  = mapper.readValue(mapper.readTree(json.toString()).get("backdrops").toString(),ImagesEntity[].class);
         ImagesEntity[] responsePosters  = mapper.readValue(mapper.readTree(json.toString()).get("posters").toString(),ImagesEntity[].class);
+        int id = mapper.readTree(json.toString()).get("id").asInt();
 
         BackPostersEntity resp = new BackPostersEntity();
         resp.setBackdrops(Arrays.asList(responseBackdrops));
         resp.setBackdrops(Arrays.asList(responsePosters));
+        resp.setId(id);
+
         return resp;
     }
     
