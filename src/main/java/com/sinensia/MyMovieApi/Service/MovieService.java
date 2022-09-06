@@ -20,6 +20,8 @@ import com.sinensia.MyMovieApi.Entity.GenresEntity;
 import com.sinensia.MyMovieApi.Entity.ImagesEntity;
 import com.sinensia.MyMovieApi.Entity.KeywordsEntity;
 import com.sinensia.MyMovieApi.Entity.MovieEntity;
+import com.sinensia.MyMovieApi.Entity.PopularMoviesEntity;
+import com.sinensia.MyMovieApi.Entity.TopRatedMoviesEntity;
 
 @Service
 public class MovieService {
@@ -41,16 +43,16 @@ public class MovieService {
     }
     
     //getAllPopularMovies
-    public List<MovieEntity> getAllPopularMovies() throws IOException {
+    public List<PopularMoviesEntity> getAllPopularMovies() throws IOException {
         StringBuilder json = getStringFromRequest("movie/popular?api_key=");
-        MovieEntity[] resp  = mapper.readValue(mapper.readTree(json.toString()).get("results").toString(),MovieEntity[].class);
+        PopularMoviesEntity[] resp  = mapper.readValue(mapper.readTree(json.toString()).get("results").toString(),PopularMoviesEntity[].class);
         return Arrays.asList(resp);
     }
     
     //getTopRatedMovies
-    public List<MovieEntity> getTopRatedMovies() throws IOException {
+    public List<TopRatedMoviesEntity> getTopRatedMovies() throws IOException {
         StringBuilder json = getStringFromRequest("movie/top_rated?api_key=");
-        MovieEntity[] resp  = mapper.readValue(mapper.readTree(json.toString()).get("results").toString(),MovieEntity[].class);
+        TopRatedMoviesEntity[] resp  = mapper.readValue(mapper.readTree(json.toString()).get("results").toString(),TopRatedMoviesEntity[].class);
         return Arrays.asList(resp);
     }
     

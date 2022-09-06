@@ -13,6 +13,8 @@ import com.sinensia.MyMovieApi.Entity.CreditsEntity;
 import com.sinensia.MyMovieApi.Entity.GenresEntity;
 import com.sinensia.MyMovieApi.Entity.KeywordsEntity;
 import com.sinensia.MyMovieApi.Entity.MovieEntity;
+import com.sinensia.MyMovieApi.Entity.PopularMoviesEntity;
+import com.sinensia.MyMovieApi.Entity.TopRatedMoviesEntity;
 import com.sinensia.MyMovieApi.Service.MovieService;
 
 @RestController
@@ -32,14 +34,14 @@ public class MovieController {
 	
 	//getAllPopularMovies
     @GetMapping("api/movie/popular")
-    public List<MovieEntity> getPopularMovies() throws IOException {
+    public List<PopularMoviesEntity> getPopularMovies() throws IOException {
         return movieService.getAllPopularMovies();
     }
     
     
     //getTopRatedMovies
     @GetMapping("api/movie/top_rated")
-    public List<MovieEntity> getTopRatedMovies() throws IOException {
+    public List<TopRatedMoviesEntity> getTopRatedMovies() throws IOException {
         return movieService.getTopRatedMovies();
     }
     
