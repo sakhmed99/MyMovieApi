@@ -4,11 +4,12 @@ package com.sinensia.MyMovieApi.Controller;
 import java.io.IOException;
 import java.util.HashMap;
 
+import com.sinensia.MyMovieApi.Entity.Usuario;
+import com.sinensia.MyMovieApi.Repository.MovieUserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import com.sinensia.MyMovieApi.Repository.UsuarioRepositorio;
 import com.sinensia.MyMovieApi.Service.MovieService;
@@ -22,7 +23,7 @@ public class MovieController {
 	MovieService movieService;
 	
 	@Autowired
-	UsuarioRepositorio usuarioRepositorio;
+	MovieUserRepo movieUserRepo;
 	
 	//Config
 	@GetMapping("/configuration")
@@ -93,8 +94,6 @@ public class MovieController {
 		return x;
 	}
 
-
-	
 		
 }
 

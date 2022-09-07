@@ -15,92 +15,55 @@ public class Usuario {
 
 	private Long id;
 	private String username;
-	private String movie;
-	Boolean favorite;
-	Integer personal_rating;
-	String notes;
-
+	private String password;
+	private String role;
 
 	public Usuario() {
 
 	}
 
-
-	public Usuario(Long id, String username, String movie, Boolean favorite, Integer personal_rating, String notes) {
-		super();
+	public Usuario(Long id, String username, String password, String role) {
 		this.id = id;
 		this.username = username;
-		this.movie = movie;
-		this.favorite = favorite;
-		this.personal_rating = personal_rating;
-		this.notes = notes;
+		this.password = password;
+		this.role = role;
 	}
-
 
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public String getUsername() {
 		return username;
 	}
 
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
-
-	public String getMovie() {
-		return movie;
+	public String getPassword() {
+		return password;
 	}
 
-
-	public void setMovie(String movie) {
-		this.movie = movie;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-
-	public Boolean getFavorite() {
-		return favorite;
+	public String getRole() {
+		return role;
 	}
 
-
-	public void setFavorite(Boolean favorite) {
-		this.favorite = favorite;
+	public void setRole(String role) {
+		this.role = role;
 	}
-
-
-	public Integer getPersonal_rating() {
-		return personal_rating;
-	}
-
-
-	public void setPersonal_rating(Integer personal_rating) {
-		this.personal_rating = personal_rating;
-	}
-
-
-	public String getNotes() {
-		return notes;
-	}
-
-
-	public void setNotes(String notes) {
-		this.notes = notes;
-	}
-
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", username=" + username + ", movie=" + movie + ", favorite=" + favorite
-				+ ", personal_rating=" + personal_rating + ", notes=" + notes + "]";
+		return "Usuario [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
 	}
 
 
