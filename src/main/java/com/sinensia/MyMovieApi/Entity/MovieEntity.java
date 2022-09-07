@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class MovieEntity {
-	
+
 	private boolean adult;
 	private String backdrop_path;
 	private int[] genres_id;
@@ -26,9 +26,9 @@ public class MovieEntity {
 	private boolean video;
 	private float vote_average;
 	private long vote_count;
-	
+
 	public MovieEntity() {
-	
+
 	}
 
 	public MovieEntity(boolean adult, String backdrop_path, int[] genres_id, long budget, long id,
@@ -201,9 +201,9 @@ public class MovieEntity {
 				+ vote_average + ", vote_count=" + vote_count + "]";
 	}
 
-	
-	
-	
-	
+
+
+
+
 
 }

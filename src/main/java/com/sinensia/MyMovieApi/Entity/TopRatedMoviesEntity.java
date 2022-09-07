@@ -8,41 +8,41 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class TopRatedMoviesEntity {
-	
-	
+
+
 private boolean adult;
-	
+
 	private String backdrop_path;
-	
+
 	private int[] genre_ids;
-	
+
 	private long id;
-	
+
 	private String original_language;
-	
+
 	private String original_title;
-	
+
 	private String overview;
-	
+
 	private float popularity;
-	
+
 	private String poster_path;
-	
+
 	private String release_date;
-	
+
 	private String title;
-	
+
 	private boolean video;
-	
+
 	private float vote_average;
-	
+
 	private long vote_count;
-	
-	
+
+
 	public TopRatedMoviesEntity() {
-		
+
 	}
-	
+
 	public TopRatedMoviesEntity(boolean adult, String backdrop_path, int[] genre_ids, long id, String original_language,
 			String original_title, String overview, float popularity, String poster_path, String release_date,
 			String title, boolean video, float vote_average, long vote_count) {

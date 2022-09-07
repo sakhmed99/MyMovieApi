@@ -7,13 +7,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class CreditsEntity {
-	
-	
+
+
 	public List<CastEntity> castEntity;
 	public List<CrewEntity> crewEntity;
-	
+
 	public CreditsEntity() {
-		
+
 	}
 
 	public CreditsEntity(List<CastEntity> castEntity, List<CrewEntity> crewEntity) {
@@ -42,9 +42,9 @@ public class CreditsEntity {
 	public String toString() {
 		return "CreditsEntity [castEntity=" + castEntity + ", crewEntity=" + crewEntity + "]";
 	}
-	
-	
-	
-	
+
+
+
+
 
 }

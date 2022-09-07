@@ -5,24 +5,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class ImagesEntity {
-	
+
 	private float aspect_ratio;
-	
+
 	private String file_path;
-	
+
 	private int height;
 
 	private String iso_639_1;
-	
+
 	private int vote_average;
-	
+
 	private int vote_count;
-	
+
 	private int width;
-	
-	
+
+
 	public ImagesEntity() {
-		
+
 	}
 
 
@@ -117,7 +117,7 @@ public class ImagesEntity {
 	}
 
 
-	
-	
-	
+
+
+
 }

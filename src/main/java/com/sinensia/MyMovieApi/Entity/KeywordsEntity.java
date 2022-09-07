@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class KeywordsEntity {
-	
-	
+
+
 	private int id;
 	private String name;
-	
-	
+
+
 	public KeywordsEntity() {
-		
+
 	}
 
 
@@ -49,7 +49,7 @@ public class KeywordsEntity {
 	public String toString() {
 		return "KeywordsEntity [id=" + id + ", name=" + name + "]";
 	}
-	
-	
+
+
 
 }

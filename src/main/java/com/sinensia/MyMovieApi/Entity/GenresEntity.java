@@ -5,13 +5,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class GenresEntity {
-	
+
 	private int id;
 	private String name;
-	
-	
+
+
 	public GenresEntity() {
-		
+
 	}
 
 
@@ -48,5 +48,5 @@ public class GenresEntity {
 	}
 
 
-	
-}	
+
+}

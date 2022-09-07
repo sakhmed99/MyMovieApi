@@ -1,7 +1,7 @@
 package com.sinensia.MyMovieApi.Entity;
 
 public class CrewEntity {
-	
+
 	private boolean adult;
 	private String credit_id;
 	private String department;
@@ -13,12 +13,12 @@ public class CrewEntity {
 	private String original_name;
 	private float popularity;
 	private String profile_path;
-	
-	
+
+
 	public CrewEntity() {
-		
+
 	}
-	
+
 	public CrewEntity(boolean adult, String credit_id, String department, int gender, Long id, String job,
 			String known_for_department, String name, String original_name, float popularity, String profile_path) {
 		super();
@@ -154,7 +154,7 @@ public class CrewEntity {
 	}
 
 
-	
+
 
 
 }

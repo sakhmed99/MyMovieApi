@@ -7,16 +7,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class BackPostersEntity {
-	
+
 	private List<ImagesEntity> backdrops;
-	
+
 	private int id;
-	
+
 	private List<ImagesEntity> posters;
-	
-	
+
+
 	public BackPostersEntity() {
-		
+
 	}
 
 
@@ -56,7 +56,7 @@ public class BackPostersEntity {
 	}
 
 
-	
+
 
 
 

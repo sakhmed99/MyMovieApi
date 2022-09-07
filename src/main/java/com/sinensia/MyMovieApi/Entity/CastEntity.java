@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class CastEntity {
-	
+
 	private boolean adult;
 	private Long cast_id;
 	private String character;
@@ -18,12 +18,12 @@ public class CastEntity {
 	private String original_name;
 	private float popularity;
 	private String profile_path;
-	
+
 	public CastEntity() {
-		
+
 	}
-	
-	
+
+
 	public CastEntity(boolean adult, Long cast_id, String character, String credit_id, int gender, Long id,
 			String known_for_department, String name, Long order, String original_name, float popularity,
 			String profile_path) {
@@ -147,8 +147,8 @@ public class CastEntity {
 				+ popularity + ", profile_path=" + profile_path + "]";
 	}
 
-	
 
-		
+
+
 
 }

@@ -1,92 +1,102 @@
 package com.sinensia.MyMovieApi.Controller;
 
+
 import java.io.IOException;
-import java.util.List;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sinensia.MyMovieApi.Entity.BackPostersEntity;
-import com.sinensia.MyMovieApi.Entity.CreditsEntity;
-import com.sinensia.MyMovieApi.Entity.GenresEntity;
-import com.sinensia.MyMovieApi.Entity.KeywordsEntity;
-import com.sinensia.MyMovieApi.Entity.MovieEntity;
-import com.sinensia.MyMovieApi.Entity.PopularMoviesEntity;
-import com.sinensia.MyMovieApi.Entity.TopRatedMoviesEntity;
+import com.sinensia.MyMovieApi.Repository.UsuarioRepositorio;
 import com.sinensia.MyMovieApi.Service.MovieService;
 
 @RestController
+@RequestMapping("/api")
 
 public class MovieController {
-	
+
 	@Autowired
 	MovieService movieService;
 	
+	@Autowired
+	UsuarioRepositorio usuarioRepositorio;
 	
-	//getAllGenres
-	@GetMapping("api/genre/movie/list")
-    public List<GenresEntity> getAllGenres() throws IOException {
-		return movieService.getAllGenres();
-    }
+	//Config
+	@GetMapping("/configuration")
+	public Object getConfiguration() {
+		var x = movieService.getConfig();
+		return x;
+	}
 	
+	//By ID Movie
+	@GetMapping("/movie/{movieid}")
+	public  HashMap<String,Object>  getMovieById(@PathVariable Long id) throws IOException{
+		return movieService.getMovieById(id);
+	}
 	
-	//getAllPopularMovies
-    @GetMapping("api/movie/popular")
-    public List<PopularMoviesEntity> getPopularMovies() throws IOException {
-        return movieService.getAllPopularMovies();
-    }
-    
-    
-    //getTopRatedMovies
-    @GetMapping("api/movie/top_rated")
-    public List<TopRatedMoviesEntity> getTopRatedMovies() throws IOException {
-        return movieService.getTopRatedMovies();
-    }
-    
-    
-    //getMoviesById
-    @GetMapping("api/movie/{movie_id}")
-    public MovieEntity getMoviesById(@PathVariable Integer movie_id) throws IOException {
-        return movieService.getMoviesById(movie_id);
-    }
-    
-    
-    //getCreditMovieById
-    @GetMapping("api/movie/{movie_id}/credits")
-    public CreditsEntity getCastAndCrewMovieById(@PathVariable Integer movie_id) throws IOException {
-        return movieService.getCreditMovieById(movie_id);
-    }
-    
-    
-    //getImageMovieById
-    @GetMapping("api/movie/{movie_id}/images")
-    public BackPostersEntity getImagesForMovieById(@PathVariable Integer movie_id) throws IOException {
-        return movieService.getImageMovieById(movie_id);
-    }
-    
-    
-    //getKeywordsMovieById
-    @GetMapping("api/movie/{movie_id}/keywords")
-    public List<KeywordsEntity> getKeywordsForMovieById(@PathVariable Integer movie_id) throws IOException {
-        return movieService.getKeywordsMovieById(movie_id);
-    }
-    
-    
-    //getRecommendationsById
-    @GetMapping("api/movie/{movie_id}/recommendations")
-    public List<MovieEntity> getRecommendationsForMovieById(@PathVariable Integer movie_id) throws IOException {
-        return movieService.getRecommendationsById(movie_id);
-    }
-    
-    
-    //getSimilarMoviesById
-    @GetMapping("api/movie/{movie_id}/similar")
-    public List<MovieEntity> getSimilarMovieById(@PathVariable Integer movie_id) throws IOException {
-        return movieService.getSimilarMoviesById(movie_id);
-        
-    
-    }
-    
+	//genre 
+	@GetMapping("/genre/movie/list")
+	public Object getAllGenres() {
+		var x = movieService.getAllGenres();
+		return x;
+	}
+	
+	//popular movie
+	@GetMapping("/movie/popular")
+	public Object getPopularMovies() {
+		var x = movieService.getPopularMovies();
+		return x;
+	}
+	
+	//Top Rated
+	@GetMapping("/movie/top_rated")
+	public Object getTopRated() {
+		var x = movieService.getTopRated();
+		return x;
+	}
+	
+	//Credits
+	@GetMapping("/movie/{movieid}/credits")
+	public Object getCredits(@PathVariable Long id) throws IOException {
+		var x = movieService.getCredits(id);
+		return x;
+	}
+	
+	//Image
+	@GetMapping("/movie/{movieid}/images")
+	public Object getImage(@PathVariable Long id) throws IOException {
+		var x = movieService.getImage(id);
+		return x;
+	}
+	
+	//Keywords
+	@GetMapping("/movie/{movieid}/keywords")
+	public Object getKeyWords(@PathVariable Long id) throws IOException {
+		var x = movieService.getKeyWords(id);
+		return x;
+	}
+	
+	//Recommends
+	@GetMapping("/movie/{movieid}/recommendations")
+	public Object getRecommends(@PathVariable Long id) throws IOException {
+		var x = movieService.getRecommends(id);
+		return x;
+	}
+	
+	//Similar Movies
+	@GetMapping("/movie/{movieid}/similar")
+	public Object getSimilarMovies(@PathVariable Long id) throws IOException {
+		var x = movieService.getSimilarMovies(id);
+		return x;
+	}
+
+
+	
+		
 }
+
+	
+
