@@ -1,5 +1,6 @@
 package com.sinensia.MyMovieApi.Entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,26 +8,46 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name= "users")
+@Table(name = "user_movie")
 public class Usuario {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-
+	@Column(name = "id", nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String username;
-	private String password;
-	private String role;
+	
+	@Column(name = "username", nullable = false)
+	String username;
+	
+	@Column(name = "password", nullable = false)
+	String password;
+	
+	String movieId;
+	
+	Boolean favorite;
+	
+	@Column(name = "enabled", nullable = false)
+	Boolean enabled;
+	
+	Integer personal_rating;
+	
+	String notes;
 
 	public Usuario() {
-
+		
 	}
 
-	public Usuario(Long id, String username, String password, String role) {
+	public Usuario(Long id, String username, String password, String movieId, Boolean favorite, Boolean enabled,
+			Integer personal_rating, String notes) {
+		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.role = role;
+		this.movieId = movieId;
+		this.favorite = favorite;
+		this.enabled = enabled;
+		this.personal_rating = personal_rating;
+		this.notes = notes;
 	}
 
 	public Long getId() {
@@ -53,19 +74,52 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
+	public String getMovieId() {
+		return movieId;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setMovieId(String movieId) {
+		this.movieId = movieId;
+	}
+
+	public Boolean getFavorite() {
+		return favorite;
+	}
+
+	public void setFavorite(Boolean favorite) {
+		this.favorite = favorite;
+	}
+
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public Integer getPersonal_rating() {
+		return personal_rating;
+	}
+
+	public void setPersonal_rating(Integer personal_rating) {
+		this.personal_rating = personal_rating;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+		return "Usuario [id=" + id + ", username=" + username + ", password=" + password + ", movieId=" + movieId
+				+ ", favorite=" + favorite + ", enabled=" + enabled + ", personal_rating=" + personal_rating
+				+ ", notes=" + notes + "]";
 	}
 
-
-
+	
 }

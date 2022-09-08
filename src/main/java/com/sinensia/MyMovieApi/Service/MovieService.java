@@ -1,12 +1,11 @@
 package com.sinensia.MyMovieApi.Service;
 
 
-
-import java.util.HashMap;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import java.util.HashMap;
 
 
 
@@ -59,8 +58,8 @@ public class MovieService {
 	
 	//Get Credits//
 	
-	public HashMap<String, Object> getCredits(Long id) {
-		HashMap<String, Object> x = webClient.get().uri(uriBuilder -> uriBuilder.path("/movie/{movieid}/credits").queryParam("api_key", api_key).build(id)).retrieve()
+	public HashMap<String, Object> getCredits(int id) {
+		HashMap<String, Object> x = webClient.get().uri(uriBuilder -> uriBuilder.path("movie/{id}/credits").queryParam("api_key", api_key).build(id)).retrieve()
 				.bodyToMono(HashMap.class).block();
 		
 		return x;
@@ -83,8 +82,8 @@ public class MovieService {
 	}
 	
 	//Get Recommendations//
-	public HashMap<String, Object> getRecommends(Long id) {
-		HashMap<String, Object> x = webClient.get().uri(uriBuilder -> uriBuilder.path("/movie/{movieid}/recommendations").queryParam("api_key", api_key).build(id)).retrieve()
+	public HashMap<String, Object> getRecommends(int id) {
+		HashMap<String, Object> x = webClient.get().uri(uriBuilder -> uriBuilder.path("/movie/{id}/recommendations").queryParam("api_key", api_key).build(id)).retrieve()
 				.bodyToMono(HashMap.class).block();
 		
 		return x;
@@ -92,7 +91,7 @@ public class MovieService {
 	
 	//Get Similar Movies
 	public HashMap<String, Object> getSimilarMovies(Long id) {
-		HashMap<String, Object> x = webClient.get().uri(uriBuilder -> uriBuilder.path("/movie/{movieid}/similar").queryParam("api_key", api_key).build(id)).retrieve()
+		HashMap<String, Object> x = webClient.get().uri(uriBuilder -> uriBuilder.path("/movie/{id}/similar").queryParam("api_key", api_key).build(id)).retrieve()
 				.bodyToMono(HashMap.class).block();
 		
 		return x;

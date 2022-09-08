@@ -1,8 +1,8 @@
 package com.sinensia.MyMovieApi.Entity;
 
-import java.util.Arrays;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.Arrays;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
